@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status NBA</title>
+     
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h1>NBA STATUS</h1>
+ 
+<select id = "selecionarjogador">
+<option value="23">Michael Jordan</option>
+<option value="6">Lebron James</option>
+<option value="24">Kobe Bryant</option>
+
+</select>
+
+<button onclick="mostrarselecionado()">Ver estátisticas</button>
+
+<div id="resultado">
+    <h2 id="nomeSelecionado">Nome do jogador</h2>
+   
+   <div class="estatisticas">
+   <div>
+
+   <strong id="pontosSelecionados">0</strong>
+
+     <span>Pontos</span>
+    </div>
+
+   <div>
+        <strong id="rebotesSelecionados">0</strong>
+        <span>Rebotes</span>
+    </div>
+
+    <div>
+        <strong id="assistenciaSelecionado">0</strong>
+        <span>Assistências</span>
+    </div>
+   </div>
+    <p id = "mensagem"></p>
+</div>
+
+   
+    <script>
+
+let jogador ={
+    id:23,
+    nome:"Michael Jordan",
+    pontos:35.1,
+    rebotes:7.5,
+    assistencias: 4.7
+}
+
+
+
+let jogador02={
+    id:6,
+   nome:"Lebron James",
+   pontos:27.0,
+   rebotes:7.5,
+   assistencias: 8.0
+
+}
+
+let jogador03 = {
+    id:24,
+    nome: "Kobe Bryant",
+    pontos: 25.0,
+    rebotes: 5.2,
+    assistencias: 4.7
+}
+
+let jogadores =[jogador, jogador02, jogador03]
+
+function mostrarselecionado(){
+     console.log("A FUNÇÃO FUNCIONOU!")
+
+let escolha = document.getElementById('selecionarjogador').value
+
+
+
+let jogadorescolhido = jogadores.find(jogador => jogador.id === Number (escolha))
+
+
+
+document.getElementById("nomeSelecionado").innerText = jogadorescolhido.
+nome
+
+document.getElementById("pontosSelecionados").innerHTML = jogadorescolhido.pontos
+
+document.getElementById("rebotesSelecionados").innerHTML =  jogadorescolhido.rebotes
+
+document.getElementById('assistenciaSelecionado').innerHTML =  jogadorescolhido.assistencias
+
+
+if(jogadorescolhido. pontos >30){
+    document.getElementById("mensagem").innerText = "🔥 Grande pontuador! "
+
+}else{
+    document.getElementById("mensagem").innerText = "Pontuação  abaixo de 30. "
+}
+}
+
+
+
+</script>
+
+
+</body>
+</html>
